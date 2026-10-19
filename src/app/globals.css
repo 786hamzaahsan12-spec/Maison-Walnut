@@ -1,0 +1,195 @@
+@import "tailwindcss";
+/* Agar aap Tailwind v3 use kar rahe hain, to upar wali line hata kar yeh 3 lines lagao:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+:root {
+  --ivory: #faf6ef;
+  --cream: #f3ece0;
+  --beige: #e6dac6;
+  --walnut: #5a3d2b;
+  --charcoal: #2a2623;
+  --gold: #b08d57;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+.section {
+  padding-block: 4.5rem;
+}
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 7rem;
+  }
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+  transition: background 0.22s, color 0.22s, border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-sm {
+  min-height: 40px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.8rem;
+}
+.btn-primary {
+  background: var(--walnut);
+  color: var(--ivory);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--charcoal);
+  box-shadow: 0 10px 24px rgba(42, 38, 35, 0.25);
+}
+.btn-gold {
+  background: var(--gold);
+  color: #fff;
+}
+.btn-gold:hover:not(:disabled) {
+  background: #9a7a47;
+}
+.btn-outline {
+  border-color: var(--walnut);
+  color: var(--walnut);
+  background: transparent;
+}
+.btn-outline:hover:not(:disabled) {
+  background: var(--walnut);
+  color: var(--ivory);
+}
+.btn-light {
+  background: #fff;
+  color: var(--charcoal);
+}
+.btn-light:hover:not(:disabled) {
+  background: var(--beige);
+}
+.btn-ghost-light {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+.btn-ghost-light:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #d9ccb4;
+  background: #fff;
+  color: var(--charcoal);
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+}
+.input:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+.input[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e6dac6 25%, #f3ece0 50%, #e6dac6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 1rem;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
